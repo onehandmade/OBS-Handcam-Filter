@@ -1,6 +1,10 @@
 # OBS 2005 Handcam Filter
 
-Makes your OBS handcam look like it was filmed on a 2005 consumer camcorder (MiniDV / Handycam style): soft, noisy, smeared color, tape glitches, and a blinking REC light with a date and time stamp.
+## AI Warning
+
+This project was created with AI assistance. It is provided as an experimental creative tool and may contain inaccuracies, rough edges, or limitations. Use it as a fun visual effect, but do not rely on it for technical or production-critical camera calibration.
+
+Makes your OBS handcam look like it was filmed on a 2005 consumer camcorder (MiniDV / Handycam style): soft, noisy, smeared color, tape glitches, and a blinking REC light with a date and time stamp[...]
 
 ## Files
 
@@ -64,7 +68,7 @@ A shader can't make video choppy. For the low-framerate camcorder feel, set your
 ## Troubleshooting
 
 - **The shader shows an error or nothing changes:** check that obs-shaderfilter is installed and that the file path in the filter is correct.
-- **The REC text doesn't line up with the dot:** make the Browser source the same size as the handcam source. If it is still off, adjust the percentages near the top of `camcorder_osd.html` (the `#rec`, `#counter`, `#battery` and `#date` lines).
+- **The REC text doesn't line up with the dot:** make the Browser source the same size as the handcam source. If it is still off, adjust the percentages near the top of `camcorder_osd.html` (the [...] 
 - **The picture looks too clean or too dirty:** raise or lower Video Noise, Tape Line Noise, and Color Smear.
 
 ## About
