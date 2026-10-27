@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Camcorder OSD</title>
+<style>
+  html, body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    overflow: hidden;
+  }
+  body {
+    /* Install "VCR OSD Mono" (free font) for the authentic look; falls back to Courier New. */
+    font-family: "VCR OSD Mono", "Courier New", monospace;
+    font-size: 3.4vh;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #ffffff;
+    /* Soft glow plus a slight red/blue fringe, like text burned into analog video. */
+    text-shadow:
+      0 0 4px rgba(255, 255, 255, 0.6),
+      2px 0 rgba(255, 0, 0, 0.35),
+      -2px 0 rgba(0, 120, 255, 0.35);
+  }
+  .osd {
+    position: absolute;
+    white-space: nowrap;
+  }
+  /* The shader's blinking REC dot sits at about 6% / 9% of the picture; this label goes right next to it. */
+  #rec     { left: 9%;  top: 7.2%; }
+  #counter { left: 9%;  top: 12.5%; }
+  #battery { right: 5%; top: 7.2%; }
+  #date    { right: 5%; bottom: 11%; text-align: right; line-height: 1.5; }
+</style>
+</head>
+<body>
+  <div id="rec" class="osd">REC</div>
+  <div id="counter" class="osd">SP 0:00:00</div>
+  <div id="battery" class="osd">BATT &#9646;&#9646;&#9646;</div>
+  <div id="date" class="osd"><span id="d">---</span><br><span id="t">---</span></div>
+
+<script>
+(function () {
+  var months = ["JAN", "FEB", "MAR", "APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+  var start = Date.now();
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+
+  function tick() {
+    var now = new Date();
+
+    var h = now.getHours();
+    var ampm = h >= 12 ? "PM" : "AM";
+    h = h % 12;
+    if (h === 0) { h = 12; }
+
+    document.getElementById("d").textContent =
+      months[now.getMonth()] + ". " + now.getDate() + " " + now.getFullYear();
+    document.getElementById("t").textContent =
+      h + ":" + pad(now.getMinutes()) + ":" + pad(now.getSeconds()) + " " + ampm;
+
+    var s = Math.floor((Date.now() - start) / 1000);
+    document.getElementById("counter").textContent =
+      "SP " + Math.floor(s / 3600) + ":" + pad(Math.floor((s % 3600) / 60)) + ":" + pad(s % 60);
+  }
+
+  tick();
+  setInterval(tick, 250);
+})();
+</script>
+</body>
+</html>
