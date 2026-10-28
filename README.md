@@ -1,10 +1,10 @@
-# OBS 2005 Handcam Filter
+# OBS 2005 Camcorder Filter
 
 ## AI Warning
 
-This project was created with AI assistance. It is provided as an experimental creative tool and may contain inaccuracies, rough edges, or limitations. Use it as a fun visual effect, but do not rely on it for technical or production-critical camera calibration.
+This project was created with AI assistance. It is provided as an experimental creative tool and may contain inaccuracies, rough edges, or limitations. Use it as a fun visual effect, but do not rely on it for professional work.
 
-Makes your OBS handcam look like it was filmed on a 2005 consumer camcorder (MiniDV / Handycam style): soft, noisy, smeared color, tape glitches, and a blinking REC light with a date and time stamp[...]
+Makes your OBS camcorder look like it was filmed on a 2005 consumer camcorder (MiniDV / Handycam style): soft, noisy, smeared color, tape glitches, and a blinking REC light with a date and time stamp.
 
 ## Files
 
@@ -23,21 +23,21 @@ Makes your OBS handcam look like it was filmed on a 2005 consumer camcorder (Min
 
 ### 1. The shader
 
-1. Right-click your handcam source and choose **Filters**.
+1. Right-click your camcorder source and choose **Filters**.
 2. Under **Effect Filters**, click **+** and add **User-defined shader**.
 3. Tick **Load shader from file** and select `handcam_2005.shader`.
 4. Adjust the sliders that appear in the filter until it looks right.
 
 ### 2. The on-screen display
 
-1. Add a **Browser** source above your handcam.
+1. Add a **Browser** source above your camcorder.
 2. Tick **Local file** and select `camcorder_osd.html`.
-3. Set its width and height to match your handcam source so the text lines up with the shader's REC dot.
+3. Set its width and height to match your camcorder source so the text lines up with the shader's REC dot.
 4. Optional: tick "Refresh browser when scene becomes active" to restart the tape counter each time the scene appears.
 
 ### 3. Low frame rate (optional)
 
-A shader can't make video choppy. For the low-framerate camcorder feel, set your handcam capture device to about 15 fps in its source properties.
+A shader can't make video choppy. For the low-framerate camcorder feel, set your camcorder capture device to about 15 fps in its source properties.
 
 ## Shader controls
 
@@ -68,7 +68,7 @@ A shader can't make video choppy. For the low-framerate camcorder feel, set your
 ## Troubleshooting
 
 - **The shader shows an error or nothing changes:** check that obs-shaderfilter is installed and that the file path in the filter is correct.
-- **The REC text doesn't line up with the dot:** make the Browser source the same size as the handcam source. If it is still off, adjust the percentages near the top of `camcorder_osd.html` (the [...] 
+- **The REC text doesn't line up with the dot:** make the Browser source the same size as the camcorder source. If it is still off, adjust the percentages near the top of `camcorder_osd.html`.
 - **The picture looks too clean or too dirty:** raise or lower Video Noise, Tape Line Noise, and Color Smear.
 
 ## About
