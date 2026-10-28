@@ -4,7 +4,7 @@
 
 This project was created with AI assistance. It is provided as an experimental creative tool and may contain inaccuracies, rough edges, or limitations. Use it as a fun visual effect, but do not rely on it for professional work.
 
-Makes your OBS camcorder look like it was filmed on a 2005 consumer camcorder (MiniDV / Handycam style): soft, noisy, smeared color, tape glitches, and a blinking REC light with a date and time stamp.
+Makes your OBS   look like it was filmed on a 2005 consumer camcorder (MiniDV / Handycam style): soft, noisy, smeared color, tape glitches, and a blinking REC light with a date and time stamp.
 
 ## Files
 
